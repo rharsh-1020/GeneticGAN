@@ -1,49 +1,51 @@
 # GeneticGAN
 
-GeneticGAN is a PyTorch project that implements two generative models:
+GeneticGAN is a PyTorch project implementing two generative models:
 
 1. **GAN-GA**: A DCGAN-based GAN integrated with a Genetic Algorithm (GA) to optimize latent vectors for better diversity and image quality.
-2. **Vanilla GAN**: A standard DCGAN for baseline comparison.
+2. **GAN**: A standard DCGAN for baseline comparison.
 
 The goal is to generate high-quality images from an ImageFolder-style dataset and compare the models using **loss curves** and **FID scores**.
 
 ---
 
-## 🔹 Project Outcome
+## 🔹 Generated Images
 
-### 1. Generated Images
+### GAN-GA Samples
 
-**GAN-GA (with GA-enhanced latent space):**
+| ![GAN-GA 1](outputs/gan_ga_1.png) | ![GAN-GA 2](outputs/gan_ga_2.png) |
+|----------------------------------|----------------------------------|
+| ![GAN-GA 3](outputs/gan_ga_3.png) | ![GAN-GA 4](outputs/gan_ga_4.png) |
 
-![GAN-GA Sample](outputs/sample_gan_ga.png)
+> GAN-GA produces images with higher diversity and sharper details.
 
-**GAN:**
+### GAN Samples
 
-![GAN Sample](outputs/sample_vanilla.png)
+| ![Vanilla GAN 1](outputs/vanilla_1.png) | ![Vanilla GAN 2](outputs/vanilla_2.png) |
+|----------------------------------------|----------------------------------------|
+| ![Vanilla GAN 3](outputs/vanilla_3.png) | ![Vanilla GAN 4](outputs/vanilla_4.png) |
 
-> GAN-GA produces images with more diversity and sharper details compared to Vanilla GAN.
+> GAN images are less diverse and slightly blurrier compared to GAN-GA.
 
 ---
 
-### 2. Training Loss Comparison
-
-**Generator and Discriminator Loss Curves:**
+## 🔹 Training Loss Comparison
 
 **GAN-GA Losses:**  
 ![GAN-GA Losses](gan_ga_losses.png)  
 
-**Vanilla GAN Losses:**  
-![Vanilla GAN Losses](gan_vanilla_losses.png)  
+**GAN Losses:**  
+![GAN Losses](gan_losses.png)  
 
 > GAN-GA shows slightly more stable generator convergence due to GA-guided latent vector optimization.
 
 ---
 
-### 3. FID Score Comparison
+## 🔹 FID Score Comparison
 
 ![FID Comparison](fid_comparison.png)  
 
-> GAN-GA achieves **lower FID scores**, indicating higher image quality and diversity compared to Vanilla GAN.
+> GAN-GA achieves **lower FID scores**, indicating higher image quality and diversity.
 
 ---
 
@@ -58,5 +60,5 @@ The goal is to generate high-quality images from an ImageFolder-style dataset an
 ## ⚡ Notes
 
 - The dataset should be organized in ImageFolder format.  
-- GAN-GA supports RGB images, while Vanilla GAN supports grayscale.  
+- GAN-GA supports RGB images, while GAN supports grayscale.  
 - Outputs (images, checkpoints, metrics) are saved in the `outputs/` folder.  
