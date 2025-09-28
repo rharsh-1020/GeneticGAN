@@ -27,10 +27,9 @@ The goal is to generate high-quality images from an ImageFolder-style dataset an
 
 <table>
 <tr>
-  <td align="center"><img src="outputs/vanilla_1.png" width="120"/></td>
-  <td align="center"><img src="outputs/vanilla_2.png" width="120"/></td>
-  <td align="center"><img src="outputs/vanilla_3.png" width="120"/></td>
-  <td align="center"><img src="outputs/vanilla_4.png" width="120"/></td>
+  <td align="center"><img src="output/gan/sample_1_63 (1).png" width="120"/><br>Epoch 2</td>
+  <td align="center"><img src="output/gan/sample_7_441 (1).png" width="120"/><br>Epoch 6</td>
+  <td align="center"><img src="output/gan/sample_9_567 (1).png" width="120"/><br>Epoch 10</td>
 </tr>
 </table>
 
