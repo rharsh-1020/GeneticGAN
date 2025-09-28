@@ -17,9 +17,9 @@ The goal is to generate high-quality images from an ImageFolder-style dataset an
 
 ![GAN-GA Sample](outputs/sample_gan_ga.png)
 
-**Vanilla GAN:**
+**GAN:**
 
-![Vanilla GAN Sample](outputs/sample_vanilla.png)
+![GAN Sample](outputs/sample_vanilla.png)
 
 > GAN-GA produces images with more diversity and sharper details compared to Vanilla GAN.
 
