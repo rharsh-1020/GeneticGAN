@@ -9,17 +9,6 @@ Both models generate images from an ImageFolder-style dataset and compute FID sc
 
 ---
 
-## Repository Structure
-
-gan-ga/
-├── gan_ga.py       # GAN-GA model, GA utilities, and training code
-├── gan.py          # Vanilla GAN model and training code
-├── main.py         # Runs training for both models and generates performance plots
-├── outputs/        # Folder for saving generated images, checkpoints, and metrics
-├── README.md       # This file
-
----
-
 ## Installation
 
 Clone the repository:
