@@ -1,107 +1,62 @@
 # GeneticGAN
 
-This repository contains PyTorch implementations of two generative models:
+GeneticGAN is a PyTorch project that implements two generative models:
 
-1. **GAN-GA**: A DCGAN-based GAN integrated with a Genetic Algorithm (GA) for latent space optimization.
-2. **GAN**: A standard DCGAN implementation for comparison.
+1. **GAN-GA**: A DCGAN-based GAN integrated with a Genetic Algorithm (GA) to optimize latent vectors for better diversity and image quality.
+2. **Vanilla GAN**: A standard DCGAN for baseline comparison.
 
-Both models generate images from an ImageFolder-style dataset and compute FID scores for quality evaluation.
-
----
-
-## Installation
-
-Clone the repository:
-
-git clone https://github.com/your-username/gan-ga.git
-cd gan-ga
-
-cpp
-Copy code
-
-Install dependencies (recommended in a virtual environment):
-
-pip install torch torchvision matplotlib pillow numpy pytorch-fid
-
-yaml
-Copy code
-
-GPU is recommended but not required. CUDA will be automatically detected if available.
+The goal is to generate high-quality images from an ImageFolder-style dataset and compare the models using **loss curves** and **FID scores**.
 
 ---
 
-## Dataset
+## 🔹 Project Outcome
 
-The models expect a dataset in ImageFolder format:
+### 1. Generated Images
 
-data_dir/
-├── class1/
-│   ├── img1.png
-│   ├── img2.png
-│   └── ...
-├── class2/
-│   └── ...
+**GAN-GA (with GA-enhanced latent space):**
 
-- GAN-GA supports RGB images (`channels=3`).
-- Vanilla GAN supports grayscale images (`channels=1`).
+![GAN-GA Sample](outputs/sample_gan_ga.png)
 
----
+**Vanilla GAN:**
 
-## Usage
+![Vanilla GAN Sample](outputs/sample_vanilla.png)
 
-### Train and evaluate both models
-
-Run `main.py` to train both models sequentially and generate plots:
-
-python main.py
-
-yaml
-Copy code
-
-This will:
-
-1. Train GAN-GA and Vanilla GAN.
-2. Save generated images, checkpoints, and metrics in `outputs/`.
-3. Generate plots:
-   - gan_ga_losses.png
-   - gan_vanilla_losses.png
-   - fid_comparison.png
+> GAN-GA produces images with more diversity and sharper details compared to Vanilla GAN.
 
 ---
 
-### Training Parameters
+### 2. Training Loss Comparison
 
-Modify hyperparameters directly in `gan_ga.py` or `gan.py`:
+**Generator and Discriminator Loss Curves:**
 
-- `epochs`: Number of training epochs
-- `batch_size`: Batch size
-- `latent_dim`: Size of latent vector
-- `lr`: Learning rate
+**GAN-GA Losses:**  
+![GAN-GA Losses](gan_ga_losses.png)  
 
-**GAN-GA specific parameters:**
+**Vanilla GAN Losses:**  
+![Vanilla GAN Losses](gan_vanilla_losses.png)  
 
-- `pop_size`: Population size for GA
-- `ga_every`: Frequency of GA steps
-- `mutation_rate`: Mutation probability
-- `lambda_div`: Weight for diversity in fitness
-- `topk_fraction`: Fraction of top latent vectors used to train Generator
+> GAN-GA shows slightly more stable generator convergence due to GA-guided latent vector optimization.
 
 ---
 
-## Output
+### 3. FID Score Comparison
 
-- Generated images: Saved at intervals during training.
-- Checkpoints: Model weights and GA population state (GAN-GA).
-- Metrics: Loss curves and FID scores (metrics.pt).
-- Plots:
-  - gan_ga_losses.png
-  - gan_vanilla_losses.png
-  - fid_comparison.png
+![FID Comparison](fid_comparison.png)  
+
+> GAN-GA achieves **lower FID scores**, indicating higher image quality and diversity compared to Vanilla GAN.
 
 ---
 
-## Notes
+## 🔹 Outcome Summary
 
-- GAN-GA uses a Genetic Algorithm to evolve latent vectors for better diversity and quality.
-- FID computation requires a sufficient number of real and generated images.
-- Both models are modular and can be extended for different datasets, image sizes,
+- Integrating a Genetic Algorithm in the GAN latent space improves image diversity and quality.  
+- GAN-GA outperforms Vanilla GAN in both visual results and FID evaluation.  
+- Loss curves suggest better training stability for GAN-GA due to GA-based latent vector evolution.
+
+---
+
+## ⚡ Notes
+
+- The dataset should be organized in ImageFolder format.  
+- GAN-GA supports RGB images, while Vanilla GAN supports grayscale.  
+- Outputs (images, checkpoints, metrics) are saved in the `outputs/` folder.  
