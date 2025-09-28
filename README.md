@@ -13,9 +13,7 @@ The goal is to generate high-quality images from an ImageFolder-style dataset an
 
 ### GAN-GA Samples
 
-| ![GAN-GA 1](outputs/gan_ga_1.png) | ![GAN-GA 2](outputs/gan_ga_2.png) |
-|----------------------------------|----------------------------------|
-| ![GAN-GA 3](outputs/gan_ga_3.png) | ![GAN-GA 4](outputs/gan_ga_4.png) |
+| ![Epoch 2](output/gan_ga/sample_1_63.png) | ![Epoch 4](output/gan_ga/sample_3_189.png) | ![Epoch 6](output/gan_ga/sample_5_315.png) | ![Epoch 8](output/gan_ga/sample_7_441.png) | ![Epoch 10](output/gan_ga/sample_9_567.png) |
 
 > GAN-GA produces images with higher diversity and sharper details.
 
