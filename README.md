@@ -11,17 +11,28 @@ The goal is to generate high-quality images from an ImageFolder-style dataset an
 
 ## 🔹 Generated Images
 
-### GAN-GA Samples
+### GAN-GA Samples (Epoch 2, 6, 10)
 
-| ![Epoch 2](output/gan_ga/sample_1_63.png) | ![Epoch 4](output/gan_ga/sample_3_189.png) | ![Epoch 6](output/gan_ga/sample_5_315.png) | ![Epoch 8](output/gan_ga/sample_7_441.png) | ![Epoch 10](output/gan_ga/sample_9_567.png) |
+<table>
+<tr>
+  <td align="center"><img src="output/gan_ga/sample_1_63.png" width="120"/><br>Epoch 2</td>
+  <td align="center"><img src="output/gan_ga/sample_5_315.png" width="120"/><br>Epoch 6</td>
+  <td align="center"><img src="output/gan_ga/sample_9_567.png" width="120"/><br>Epoch 10</td>
+</tr>
+</table>
 
 > GAN-GA produces images with higher diversity and sharper details.
 
 ### GAN Samples
 
-| ![Vanilla GAN 1](outputs/vanilla_1.png) | ![Vanilla GAN 2](outputs/vanilla_2.png) |
-|----------------------------------------|----------------------------------------|
-| ![Vanilla GAN 3](outputs/vanilla_3.png) | ![Vanilla GAN 4](outputs/vanilla_4.png) |
+<table>
+<tr>
+  <td align="center"><img src="outputs/vanilla_1.png" width="120"/></td>
+  <td align="center"><img src="outputs/vanilla_2.png" width="120"/></td>
+  <td align="center"><img src="outputs/vanilla_3.png" width="120"/></td>
+  <td align="center"><img src="outputs/vanilla_4.png" width="120"/></td>
+</tr>
+</table>
 
 > GAN images are less diverse and slightly blurrier compared to GAN-GA.
 
@@ -30,10 +41,10 @@ The goal is to generate high-quality images from an ImageFolder-style dataset an
 ## 🔹 Training Loss Comparison
 
 **GAN-GA Losses:**  
-![GAN-GA Losses](gan_ga_losses.png)  
+<img src="gan_ga_losses.png" width="400"/>  
 
 **GAN Losses:**  
-![GAN Losses](gan_losses.png)  
+<img src="gan_losses.png" width="400"/>  
 
 > GAN-GA shows slightly more stable generator convergence due to GA-guided latent vector optimization.
 
@@ -41,7 +52,7 @@ The goal is to generate high-quality images from an ImageFolder-style dataset an
 
 ## 🔹 FID Score Comparison
 
-![FID Comparison](fid_comparison.png)  
+<img src="fid_comparison.png" width="400"/>  
 
 > GAN-GA achieves **lower FID scores**, indicating higher image quality and diversity.
 
