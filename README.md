@@ -45,7 +45,9 @@ The goal is to generate high-quality images from an ImageFolder-style dataset an
 **GAN Losses:**  
 <img src="output/Generator and Discriminator Loss During Training (GAN) 10 epochs.png" width="400"/>  
 
-> GAN-GA shows slightly more stable generator convergence due to GA-guided latent vector optimization.
+- GAN-GA shows more fluctuations in generator loss due to GA-based exploration, but this leads to better coverage of the latent space.
+- GAN exhibits smoother but less diverse generator learning.
+- Discriminator loss in both models stabilizes near zero, showing effective adversarial training.
 
 ---
 
@@ -53,20 +55,23 @@ The goal is to generate high-quality images from an ImageFolder-style dataset an
 
 <img src="output/Comparison for GAN vs GAN-GA using FID Scores through.png" width="400"/>  
 
-> GAN-GA achieves **lower FID scores**, indicating higher image quality and diversity.
+- **GAN-GA consistently achieves lower FID scores** across epochs compared to GAN.
+- This demonstrates that GAN-GA generates images that are closer to the real data distribution.
+- GAN improves gradually, but GAN-GA converges faster and stabilizes at a better FID.
 
 ---
 
 ## 🔹 Outcome Summary
 
-- Integrating a Genetic Algorithm in the GAN latent space improves image diversity and quality.  
-- GAN-GA outperforms Vanilla GAN in both visual results and FID evaluation.  
-- Loss curves suggest better training stability for GAN-GA due to GA-based latent vector evolution.
-
+- Integrating a Genetic Algorithm into GAN training improves image diversity and visual quality.
+- GAN-GA outperforms GAN in both qualitative (image sharpness, diversity) and quantitative (FID score) evaluation.
+- Loss curves show that while GAN-GA introduces higher variance in generator loss, it ultimately leads to better exploration and higher-quality generations.
+- Conclusion: GAN-GA provides faster and more effective convergence than GAN, making it the stronger model for generative tasks.
 ---
 
 ## ⚡ Notes
 
-- The dataset should be organized in ImageFolder format.  
-- GAN-GA supports RGB images, while GAN supports grayscale.  
-- Outputs (images, checkpoints, metrics) are saved in the `outputs/` folder.  
+- Results shown here are based on 10 training epochs only. The models can be further studied and improved by extending training to more epochs for deeper convergence.
+- The dataset should be organized in ImageFolder format.
+- GAN-GA supports RGB images, while Vanilla GAN supports grayscale.
+-Outputs (images, plots) are saved in the outputs/ folder. 
