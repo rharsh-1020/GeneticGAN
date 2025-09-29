@@ -40,10 +40,10 @@ The goal is to generate high-quality images from an ImageFolder-style dataset an
 ## 🔹 Training Loss Comparison
 
 **GAN-GA Losses:**  
-<img src="gan_ga_losses.png" width="400"/>  
+<img src="output/Generator and Discriminator Loss During Training (GAN-GA) 10 epochs.png" width="400"/>  
 
 **GAN Losses:**  
-<img src="gan_losses.png" width="400"/>  
+<img src="output/Generator and Discriminator Loss During Training (GAN) 10 epochs.png" width="400"/>  
 
 > GAN-GA shows slightly more stable generator convergence due to GA-guided latent vector optimization.
 
@@ -51,7 +51,7 @@ The goal is to generate high-quality images from an ImageFolder-style dataset an
 
 ## 🔹 FID Score Comparison
 
-<img src="fid_comparison.png" width="400"/>  
+<img src="output/Comparison for GAN vs GAN-GA using FID Scores through.png" width="400"/>  
 
 > GAN-GA achieves **lower FID scores**, indicating higher image quality and diversity.
 
